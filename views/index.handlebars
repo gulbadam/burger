@@ -1,0 +1,71 @@
+<div class="container text-center" id="head">
+<h1>Eat-Da-Burger!</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+        <form class="create-update-form" id="newBurger" action="/" method="POST">
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="burgerInput" name="burger_name" placeholder="...Order A Burger" required>
+                <button class="btnColor btn btn-success" type="submit">Add Burger</button>
+                
+            </div>
+        </form>
+        </div>
+        </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="row">
+                <div class="col-8">
+                    <p> {{#each burgers}} 
+                        {{#unless this.devoured}}
+                        {{this.burger_name}}</p>
+                </div>
+                <div class="col-4">
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button class="btnColor btn btn-success" type="submit">Devour it!</button>
+                    </form>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-8">
+                    <p>{{/unless}}
+                        {{/each}}</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-4">
+            <img  src="/assets/img/brg.png">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-8">
+                    <p>{{#each burgers}} 
+                        {{#if this.devoured}}
+                            {{this.burger_name}}</p>
+                </div>
+                <div class="col-4">
+                    <form action="/{{this.id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <button class="btnColor btn btn-danger" type="submit">Trash It!</button>
+                    </form>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+             <p>{{/if}} 
+                 {{/each}}</p>
+            </div>
+            
+    </div>
+        </div>
+    </div>
+    </div>
+    
+    

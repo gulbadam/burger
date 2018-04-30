@@ -1,0 +1,29 @@
+body {
+    background-image: url("../img/restaurant-background-restaurant-background-template-vector-free-in-food-menu-background-hd.jpg")
+}
+
+h1 {
+    font-size: 5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+input {
+    height: 2.5em;
+    width: 20em;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+#head {
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
+
+#newBurger {
+    margin-bottom: 3rem;
+}
